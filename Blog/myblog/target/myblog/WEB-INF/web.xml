@@ -4,19 +4,11 @@
          xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
           http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
          version="3.0">
-
-  <display-name>dreamland-web</display-name>
-
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>
       classpath*:spring-mybatis.xml
     </param-value>
-  </context-param>
-
-  <context-param>
-    <param-name>log4jConfigLocation</param-name>
-    <param-value>classpath:log4j.properties</param-value>
   </context-param>
 
   <!-- 编码过滤器 解决POST乱码问题-->
@@ -37,6 +29,11 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+
+  <context-param>
+    <param-name>log4jConfigLocation</param-name>
+    <param-value>classpath:log4j.properties</param-value>
+  </context-param>
 
   <!-- 防止spring内存溢出监听器，比如quartz -->
   <listener>
