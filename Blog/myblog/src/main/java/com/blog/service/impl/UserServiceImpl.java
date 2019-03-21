@@ -5,12 +5,14 @@ import com.blog.entity.User;
 import com.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @Author:shui.li
  * @Date:2019/3/715:25
  */
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -18,8 +20,9 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int regist(User user) {
-        userMapper.selectByPrimaryKey(12222L);
-        return 0;
+        int i = userMapper.insert(user);
+        i = i / 0;
+        return i;
     }
 
     @Override

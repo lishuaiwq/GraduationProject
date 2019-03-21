@@ -21,7 +21,9 @@ public class UserController {
 
     @RequestMapping("/hehe")
     User hehe(){
-        userService.regist(new User());
-        return new User();
+        User user=new User();
+        user.setNickName("小帅");
+        userService.regist(user);
+        return user;
     }
 }
